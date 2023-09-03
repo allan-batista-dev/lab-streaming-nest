@@ -8,12 +8,19 @@ datasource db {
 }
 
 model Users {
-  id                     Int       @id @default(autoincrement())
-  creted_at              DateTime  @default(now())
-  upadated_at            DateTime  @updatedAt
-  email                  String    @unique
-  name                   String
-  password               String
+  id          Int      @id @default(autoincrement())
+  creted_at   DateTime @default(now())
+  upadated_at DateTime @updatedAt
+  email       String   @unique
+  name        String
+  password    String
 
   @@map("users")
+}
+
+model Videos {
+  id          Int      @id @default(autoincrement())
+  creted_at   DateTime @default(now())
+  upadated_at DateTime @updatedAt
+  file        String
 }

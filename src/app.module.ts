@@ -7,12 +7,14 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from './database/prisma.service';
+import { StreamingModule } from './streaming/streaming.module';
 
 @Module({
   imports: [
     UserModule,
     AuthModule,
     ConfigModule.forRoot({ isGlobal: true }),
+    StreamingModule,
   ],
   controllers: [AppController],
   providers: [
